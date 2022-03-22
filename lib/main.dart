@@ -1,6 +1,6 @@
-import 'package:first_prototype/pages/home_page.dart';
 import 'package:first_prototype/pages/main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:first_prototype/pages/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'RECIPES NECESSITIES', // Title of App
       home: MainPage(),
-      theme: new ThemeData(scaffoldBackgroundColor: Colors.grey[300]),
+      theme: lightTheme,
+      //new ThemeData(scaffoldBackgroundColor: Colors.grey[300]),
     );
   }
 }
