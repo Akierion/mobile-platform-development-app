@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             Text('Welcome to Recipes Necessities', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),),
             Text(''),
             Text(''),
-            const Image(image: AssetImage('logo.png'), height: 200,),
+            const Image(image: AssetImage('logo.png'), height: 350,),
             Text(''),
             Text(''),
             Text('The one stop that helps students shop.', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),),
