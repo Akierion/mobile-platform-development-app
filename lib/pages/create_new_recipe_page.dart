@@ -17,10 +17,11 @@ class CreateNewRecipePage extends StatelessWidget {
                 Text(''),
                 SizedBox(
                   width: 200,
-                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe name here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik',), maxLines: 1,)),
+                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe name here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik', fontWeight: FontWeight.bold), maxLines: 1,)),
+                Text(''),
                 SizedBox(
                   width: 300,
-                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe steps here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik',), maxLines: 5,)),
+                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe steps here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik', fontWeight: FontWeight.bold), maxLines: 5,)),
                 SizedBox(
                 child: OutlinedButton (
                   style: OutlinedButton.styleFrom(
@@ -31,7 +32,7 @@ class CreateNewRecipePage extends StatelessWidget {
                   ),
                   onPressed: (){},
                   child: Text('UPLOAD', style: TextStyle(
-                      fontSize: 16, letterSpacing: 2.2, color: Colors.black)
+                      fontSize: 16, letterSpacing: 2.2, color: Colors.black),
                   ),
                 ),
                 )],
