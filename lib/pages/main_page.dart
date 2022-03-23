@@ -4,6 +4,7 @@ import 'package:first_prototype/pages/breakfast_page.dart';
 import 'package:first_prototype/pages/create_new_recipe_page.dart';
 import 'package:first_prototype/pages/dinner_page.dart';
 import 'package:first_prototype/pages/lunch_page.dart';
+import 'package:first_prototype/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -33,18 +34,18 @@ class _MainPageState extends State<MainPage> {
     LunchPage(),
     DinnerPage(),
     CreateNewRecipePage(),
+    SettingsPage(),
   ];
 
   MainPageAppbar () {
     return AppBar(
       leading:
       IconButton(onPressed: (){}, tooltip: 'Login', icon: loginIcon,), // Adds a login icon button to the left of the title
-      title: Text('Recipes Necessities', style: TextStyle(fontSize: 20, fontFamily: 'Rubik')),
+      title: Text('Recipes Necessities', style: TextStyle(fontSize: 20, fontFamily: 'Rubik', fontWeight: FontWeight.bold)),
       centerTitle: true,
       foregroundColor: Colors.grey[700],
       backgroundColor: Colors.white,
       actions: [ // Adds a settings and search icon button to the right of the title
-        IconButton(onPressed: (){}, tooltip: 'Settings', icon: settingsIcon,),
         IconButton(onPressed: (){}, tooltip: 'Search', icon: searchIcon,),
       ],
     );
@@ -81,7 +82,9 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: dinnerIcon, label: 'Dinner',),
           BottomNavigationBarItem(
-              icon: addIcon, label: 'Add New Recipe',)
+              icon: addIcon, label: 'Add New Recipe',),
+          BottomNavigationBarItem(
+              icon: settingsIcon, label: 'Settings'),
         ],
       )
     );

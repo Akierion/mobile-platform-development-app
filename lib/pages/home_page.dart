@@ -19,13 +19,13 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text(''),
             Text(''),
-            Text('Welcome to Recipes Necessities', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),),
+            Text('Welcome to Recipes Necessities', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),textAlign: TextAlign.center,),
             Text(''),
             Text(''),
-            const Image(image: AssetImage('logo.png'), height: 350,),
+            const Image(image: AssetImage('assets/logo.png'), height: 350,),
             Text(''),
             Text(''),
-            Text('The one stop that helps students shop.', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),),
+            Text('The one stop that helps students shop.', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0),textAlign: TextAlign.center,),
           ]
         ),
     ),
