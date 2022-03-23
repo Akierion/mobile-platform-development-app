@@ -28,6 +28,8 @@ class _SettingsPageState extends State<SettingsPage> {
         padding: const EdgeInsets.all(10),
         child: ListView(
           children: [
+            Padding(padding: EdgeInsets.all(10.0),
+            child: Text('Settings', style: TextStyle(fontFamily: 'Rubik', fontSize: 25.0,), textAlign: TextAlign.center)),
             SizedBox(
                 height: 40),
             Row(
@@ -41,10 +43,10 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             Divider(height: 20, thickness: 1,),
             SizedBox(height: 10),
-            buildAccountOption(context, 'Change Password'),
-            buildAccountOption(context, 'Language'),
-            buildAccountOption(context, 'Privacy and Security'),
-            buildAccountOption(context, 'Terms and Conditions'),
+            buildAccountOption(context, 'Change Password', 'Change Password Here'),
+            buildAccountOption(context, 'Language', 'Languages Here'),
+            buildAccountOption(context, 'Privacy and Security', 'Privacy and Security Here'),
+            buildAccountOption(context, 'Terms and Conditions', 'Terms and Conditions Here'),
             SizedBox(height: 40),
             Row(
               children: [ // Preference Settings
@@ -98,6 +100,8 @@ class _SettingsPageState extends State<SettingsPage> {
               trackColor: Colors.grey,
               value: value,
               onChanged: (bool newValue) {
+
+                //ThemeData.from(colorScheme: ColorScheme.dark());
                 OnChangeMethod(newValue);
                 },
             ),
@@ -107,7 +111,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  GestureDetector buildAccountOption(BuildContext context, String title) {
+  GestureDetector buildAccountOption(BuildContext context, String title, String content,) {
     return GestureDetector(
       onTap: () {
         showDialog(context: context, builder: (BuildContext context) {
@@ -116,8 +120,7 @@ class _SettingsPageState extends State<SettingsPage> {
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Option 1'),
-                Text('Option 2'),
+                Text(content),
               ],
             ),
             actions: [

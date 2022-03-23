@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
             Text(''),
             Text('The one stop that helps students shop.', style: TextStyle(fontFamily: 'Rubik', fontSize: 25.0),textAlign: TextAlign.center,),
             Text(''),
-            Text('QUICK TIP: Buying frozen food (meat, vegetables, etc) is cheaper, and the food lasts months longer!', style: TextStyle(fontFamily: 'Rubik', fontSize: 15.0), textAlign: TextAlign.center,),
+            Text('Tip of the day: Buying frozen food is cheaper, and longerlasting!', style: TextStyle(fontFamily: 'Rubik', fontSize: 15.0), textAlign: TextAlign.center),
           ]
         ),
     ),

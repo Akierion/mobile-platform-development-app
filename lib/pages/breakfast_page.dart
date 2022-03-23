@@ -12,357 +12,39 @@ class BreakfastPage extends StatelessWidget {
         Text(''),
         Text('Breakfast Recipes', textAlign: TextAlign.center, style: TextStyle(fontSize: 35, fontFamily: 'Rubik'),),
         Text(''),
-        Card(
-          child: Column (
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-            const ListTile(
-                title: Text('RECIPE NAME'),
-                subtitle: Text('CALORIES'),
-            ),
-            Row (
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-              TextButton(
-                  child: const Text('Check Nutritional Content'),
-                  onPressed: (){/**/},
-              ),
-              TextButton(
-                  child: const Text('See Recipe'),
-                  onPressed: (){}),
-              ],
-            )
-          ],
-        )
-      ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
-        Card(
-            child: Column (
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('RECIPE NAME'),
-                  subtitle: Text('CALORIES'),
-                ),
-                Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('Check Nutritional Content'),
-                      onPressed: (){/**/},
-                    ),
-                    TextButton(
-                        child: const Text('See Recipe'),
-                        onPressed: (){}),
-                  ],
-                )
-              ],
-            )
-        ),
+        recipeCardBuilder('recipe 1', '500'),
+        recipeCardBuilder('recipe 2', '600')
     ],
     ),
-    );
+      );
   }
+
+   Card recipeCardBuilder (String recipeName, String calories) {
+      return Card (
+        child: Column (
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget> [
+               ListTile (
+                title: Text(recipeName),
+                subtitle: Text(calories + ' calories'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  TextButton(
+                      child: const Text('Check Nutrtional Content'),
+                      onPressed: (){},
+                  ),
+                  TextButton(
+                     child: const Text('Check Nutrtional Content'),
+                     onPressed: (){},
+                  )
+              ],
+            )
+        ],
+      ),
+     );
+}
 }

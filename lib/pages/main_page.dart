@@ -5,6 +5,7 @@ import 'package:first_prototype/pages/create_new_recipe_page.dart';
 import 'package:first_prototype/pages/dinner_page.dart';
 import 'package:first_prototype/pages/lunch_page.dart';
 import 'package:first_prototype/pages/settings_page.dart';
+import 'package:first_prototype/pages/todolist_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -27,6 +28,7 @@ class _MainPageState extends State<MainPage> {
   Icon breakfastIcon = const Icon(IconData(0xeef3, fontFamily: 'MaterialIcons')); // breakfast_dining_outlined
   Icon lunchIcon = const Icon(IconData(0xf1a8, fontFamily: 'MaterialIcons')); // lunch_dining_outlined
   Icon dinnerIcon = const Icon(IconData(0xefbf, fontFamily: 'MaterialIcons')); // dinner_dining_outlined
+  Icon checklistIcon = const Icon(IconData(0xef4b, fontFamily: 'MaterialIcons'));
   int currentIndex = 0;
   List pages = [
     HomePage(),
@@ -34,6 +36,7 @@ class _MainPageState extends State<MainPage> {
     LunchPage(),
     DinnerPage(),
     CreateNewRecipePage(),
+    ToDoListPage(),
     SettingsPage(),
   ];
 
@@ -41,7 +44,7 @@ class _MainPageState extends State<MainPage> {
     return AppBar(
       leading:
       IconButton(onPressed: (){}, tooltip: 'Login', icon: loginIcon,), // Adds a login icon button to the left of the title
-      title: Text('Recipes Necessities', style: TextStyle(fontSize: 20, fontFamily: 'Rubik', fontWeight: FontWeight.bold)),
+      title: Text('Recipes Necessities', style: TextStyle(fontSize: 20, fontFamily: 'Rubik', fontWeight: FontWeight.bold, color: Colors.black)),
       centerTitle: true,
       foregroundColor: Colors.grey[700],
       backgroundColor: Colors.white,
@@ -83,6 +86,8 @@ class _MainPageState extends State<MainPage> {
             icon: dinnerIcon, label: 'Dinner',),
           BottomNavigationBarItem(
               icon: addIcon, label: 'Add New Recipe',),
+          BottomNavigationBarItem(
+              icon: checklistIcon, label: 'Shopping List'),
           BottomNavigationBarItem(
               icon: settingsIcon, label: 'Settings'),
         ],

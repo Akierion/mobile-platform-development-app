@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'RECIPES NECESSITIES', // Title of App
+      debugShowCheckedModeBanner: false,
       home: MainPage(),
       theme: lightTheme,
       //new ThemeData(scaffoldBackgroundColor: Colors.grey[300]),
