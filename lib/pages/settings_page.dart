@@ -43,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
             buildAccountOption(context, "Privacy and Security"),
             SizedBox(height: 40),
             Row(
-              children: [
+              children: [ // Preference Settings
                 Icon(Icons.volume_up_outlined),
                 SizedBox(width: 10),
                 Text('Preferences', style: TextStyle(
@@ -57,7 +57,7 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(height: 10),
             buildNotificationOption('Dark Theme', valNotify1, onChangeFunction1),
             SizedBox(height: 50),
-            Center(
+            Center ( // Sign out button
               child: OutlinedButton (
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -67,7 +67,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: (){},
                 child: Text('SIGN OUT', style: TextStyle(
-                  fontSize: 16, letterSpacing: 2.2, color: Colors.black)
+                  fontSize: 16, letterSpacing: 2.2, color: Colors.black),
                 ),
                 ),),
           ],
@@ -81,7 +81,7 @@ class _SettingsPageState extends State<SettingsPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: TextStyle(
+          Text(title, style: TextStyle( // Builds the preferences menu for each preference defined in the buildNotificationOption function on lines 41-43
             fontSize: 20,
             fontWeight: FontWeight.bold,
             fontFamily: 'Rubik',
@@ -124,7 +124,7 @@ class _SettingsPageState extends State<SettingsPage> {
           );
         });
       },
-      child: Padding(
+      child: Padding (
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
