@@ -3,8 +3,8 @@ import '../builders/recipe_card_builder.dart';
 
 class BreakfastPage extends StatelessWidget {
   BreakfastPage({Key? key}) : super(key: key);
-  final List<String> recipes = <String> ['Recipe 1', 'Recipe 2', 'Recipe 3', 'Recipe 4'];
-  final List<String> calories = <String> ['400', '300', '600', '800'];
+  final List<String> recipes = <String> ['Avocado on Toast', 'American Pancakees', 'Eggy Soldiers', 'Porridge'];
+  final List<String> calories = <String> ['280', '356', '300', '175'];
   final recipeCardBuilder = RecipeCardBuilder();
 
   @override
@@ -19,9 +19,10 @@ class BreakfastPage extends StatelessWidget {
               ),
           ),
         ),
-        recipeCardBuilder.recipeCardBuilder('recipe 1', '500'),
-        recipeCardBuilder.recipeCardBuilder('recipe 2', '600'),
-        recipeCardBuilder.recipeCardBuilder('recipe 3', '500')
+        recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
+        recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
+        recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
+        recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
     ],
     ),
       );

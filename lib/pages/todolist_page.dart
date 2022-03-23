@@ -21,7 +21,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(padding: EdgeInsets.all(10.0),
-            child:Text('Your Shopping List:', style: TextStyle(fontSize: 20.0, fontFamily: 'Rubik'),)),
+            child:Text('My Shopping List:', style: TextStyle(fontSize: 20.0, fontFamily: 'Rubik'),)),
           Card()
         ],
       ),

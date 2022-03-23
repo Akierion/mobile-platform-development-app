@@ -1,4 +1,3 @@
-import 'package:first_prototype/pages/home_page.dart';
 import 'package:first_prototype/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:first_prototype/pages/themes.dart';

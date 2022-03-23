@@ -14,11 +14,14 @@ class RecipeCardBuilder extends StatefulWidget {
         children: <Widget> [
           ListTile (
             title: Text(recipeName),
-            subtitle: Text(calories + ' calories'),
+            subtitle: Text(calories + ' calories per serving'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
+              TextButton(
+                  child: const Text('Allergens'),
+                  onPressed: (){}),
               TextButton(
                 child: const Text('Check Nutrtional Content'),
                 onPressed: (){},
@@ -26,7 +29,7 @@ class RecipeCardBuilder extends StatefulWidget {
               TextButton(
                 child: const Text('See Recipe'),
                 onPressed: (){},
-              )
+              ),
             ],
           )
         ],
