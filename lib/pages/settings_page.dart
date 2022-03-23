@@ -1,5 +1,8 @@
+import 'package:first_prototype/pages/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../main.dart';
 
 // youtube.com/watch?v=FnXg0NK6hb8 -- For Help on Settings
 
@@ -11,7 +14,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool valNotify1 = true;
+  bool valNotify1 = false;
 
   onChangeFunction1(bool newValue1) {
     setState(() {
@@ -94,7 +97,7 @@ class _SettingsPageState extends State<SettingsPage> {
               value: value,
               onChanged: (bool newValue) {
                 OnChangeMethod(newValue);
-              },
+                },
             ),
           )
         ],
