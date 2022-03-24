@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../builders/recipe_card_builder.dart';
+import 'create_new_recipe_page.dart';
 
 class MealsPage extends StatelessWidget {
   MealsPage({Key? key}) : super(key: key);
@@ -10,23 +11,24 @@ class MealsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView (
-        children: <Widget> [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top:10),
-                child: Text('Meals', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik'),
-                ),
-            ),
+    return Scaffold(
+        appBar: AppBar(title: Text('Lunch Recipes',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
+            backgroundColor: Colors.white,foregroundColor: Colors.black),
+        body: Container(
+          child: ListView (
+              children: <Widget> [
+                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
+                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
+                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
+              ]
           ),
-          recipeCardBuilder.recipeCardBuilder(recipes[0], recipes[0]),
-          recipeCardBuilder.recipeCardBuilder(recipes[1], recipes[1]),
-          recipeCardBuilder.recipeCardBuilder(recipes[2], recipes[2]),
-          recipeCardBuilder.recipeCardBuilder(recipes[3], recipes[3]),
-        ],
-      ),
-    );
+        ),
+        floatingActionButton: FloatingActionButton(backgroundColor: Colors.white, foregroundColor: Colors.black.withOpacity(0.7),
+            child: Icon(Icons.add),onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AddRecipe()));}
+        ));
   }
 }
 

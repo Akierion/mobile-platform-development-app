@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../builders/recipe_card_builder.dart';
+import 'create_new_recipe_page.dart';
 
 class DessertsPage extends StatelessWidget {
   DessertsPage({Key? key}) : super(key: key);
@@ -9,27 +10,23 @@ class DessertsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView (
-        children: <Widget> [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top:10),
-              child: Text('Desserts', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik'),
-              ),
-            ),
+    return Scaffold(
+        appBar: AppBar(title: Text('Dessert Recipes',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
+            backgroundColor: Colors.white,foregroundColor: Colors.black),
+        body: Container(
+          child: ListView (
+              children: <Widget> [
+                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
+                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
+                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
+              ]
           ),
-          recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
-          recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
-          recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
-          recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
-          recipeCardBuilder.recipeCardBuilder(recipes[4], calories[4]),
-          recipeCardBuilder.recipeCardBuilder(recipes[5], calories[5]),
-          recipeCardBuilder.recipeCardBuilder(recipes[6], calories[6]),
-          recipeCardBuilder.recipeCardBuilder(recipes[7], calories[7]),
-          recipeCardBuilder.recipeCardBuilder(recipes[8], calories[8]),
-        ],
-),
-    );
+        ),
+        floatingActionButton: FloatingActionButton(backgroundColor: Colors.white, foregroundColor: Colors.black.withOpacity(0.7),
+            child: Icon(Icons.add),onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AddRecipe()));}
+        ));
   }
 }

@@ -25,63 +25,65 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            Padding(padding: EdgeInsets.all(10.0),
-            child: Text('Settings', style: TextStyle(fontFamily: 'Rubik', fontSize: 25.0,), textAlign: TextAlign.center)),
-            SizedBox(
-                height: 40),
-            Row(
-                children: [
-                  Icon(Icons.account_circle_rounded),
-                  SizedBox(width: 10),
-                  Text('Account', style: TextStyle(fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Rubik'),)
-                ]
-            ),
-            Divider(height: 20, thickness: 1,),
-            SizedBox(height: 10),
-            buildAccountOption(context, 'Change Password', 'Change Password Here'),
-            buildAccountOption(context, 'Language', 'Languages Here'),
-            buildAccountOption(context, 'Privacy and Security', 'Privacy and Security Here'),
-            buildAccountOption(context, 'Terms and Conditions', 'Terms and Conditions Here'),
-            SizedBox(height: 40),
-            Row(
-              children: [ // Preference Settings
-                Icon(Icons.volume_up_outlined),
+    return Scaffold(
+        appBar: AppBar(title: Text('Settings',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
+            backgroundColor: Colors.white, foregroundColor: Colors.black),
+        body: Container(
+         padding: const EdgeInsets.all(10),
+          child: ListView(
+            children: [
+              Padding(padding: EdgeInsets.all(10.0)),
+              SizedBox(height: 40),
+              Row(
+              children: [
+                Icon(Icons.account_circle_rounded),
                 SizedBox(width: 10),
-                Text('Preferences', style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Rubik',
-                )),
-              ],
-            ),
-            Divider(height: 20, thickness: 1),
-            SizedBox(height: 10),
-            buildNotificationOption('Dark Theme', valNotify1, onChangeFunction1),
-            SizedBox(height: 50),
-            Center ( // Sign out button
-              child: OutlinedButton (
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  )
-                ),
-                onPressed: (){
-                  _signOut(); // calls signout function
-                },
-                child: Text('SIGN OUT', style: TextStyle(
-                  fontSize: 16, letterSpacing: 2.2, color: Colors.black),
-                ),
-                ),
-            ),
+                Text('Account', style: TextStyle(fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Rubik'),)
+              ]
+          ),
+          Divider(height: 20, thickness: 1,),
+          SizedBox(height: 10),
+          buildAccountOption(context, 'Change Password', 'Change Password Here'),
+          buildAccountOption(context, 'Language', 'Languages Here'),
+          buildAccountOption(context, 'Privacy and Security', 'Privacy and Security Here'),
+          buildAccountOption(context, 'Terms and Conditions', 'Terms and Conditions Here'),
+          SizedBox(height: 40),
+          Row(
+            children: [ // Preference Settings
+              Icon(Icons.volume_up_outlined),
+              SizedBox(width: 10),
+              Text('Preferences', style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Rubik',
+              )),
+            ],
+          ),
+          Divider(height: 20, thickness: 1),
+          SizedBox(height: 10),
+          buildNotificationOption('Dark Theme', valNotify1, onChangeFunction1),
+          SizedBox(height: 50),
+          Center ( // Sign out button
+            child: OutlinedButton (
+              style: OutlinedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                )
+              ),
+              onPressed: (){
+                _signOut(); // calls signout function
+              },
+              child: Text('SIGN OUT', style: TextStyle(
+                fontSize: 16, letterSpacing: 2.2, color: Colors.black),
+              ),
+              ),
+          ),
           ],
         )
+              )
     );
   }
 

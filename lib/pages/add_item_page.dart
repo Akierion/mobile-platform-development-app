@@ -23,9 +23,9 @@ class _AddTaskState extends State<AddTask> {
     var time = DateTime.now();
 
     await FirebaseFirestore.instance
-        .collection('tasks')
+        .collection('shopping lists')
         .doc(uid)
-        .collection('user tasks')
+        .collection('shopping list')
         .doc(time.toString())
         .set({'title': titleController.text, 'description': descriptionController.text, 'time': time
         });

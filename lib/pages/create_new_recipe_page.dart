@@ -1,42 +1,80 @@
-
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class CreateNewRecipePage extends StatelessWidget {
-  const CreateNewRecipePage({Key? key}) : super(key: key);
+class AddRecipe extends StatefulWidget {
+  const AddRecipe({Key? key}) : super(key: key);
+
+  @override
+  State<AddRecipe> createState() => _AddRecipeState();
+}
+
+class _AddRecipeState extends State<AddRecipe> {
+  TextEditingController recipeNameController = TextEditingController();
+  TextEditingController instructionController = TextEditingController();
+
+  addRecipeToFirebase() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    final User user = await auth.currentUser!;
+    final uid = user.uid;
+    var time = DateTime.now();
+
+    await FirebaseFirestore.instance
+        .collection('recipes')
+        .doc(uid)
+        .collection('my recipes')
+        .doc(time.toString())
+        .set({'title': recipeNameController.text, 'description': instructionController.text, 'time': time
+    });
+    Fluttertoast.showToast(msg: 'Recipe added');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: Center (
-              child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                Text('Recipe Creation', style: TextStyle(fontFamily: 'Rubik', fontSize: 30.0,)),
-                Text(''),
-                SizedBox(
-                  width: 200,
-                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe name here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik', fontWeight: FontWeight.bold), maxLines: 1,)),
-                Text(''),
-                SizedBox(
-                  width: 300,
-                  child: TextField (decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Insert recipe steps here',), style: TextStyle(fontSize: 15.0, fontFamily: 'Rubik', fontWeight: FontWeight.bold), maxLines: 5,)),
-                SizedBox(
-                child: OutlinedButton (
-                  style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      )
-                  ),
-                  onPressed: (){},
-                  child: Text('UPLOAD', style: TextStyle(
-                      fontSize: 16, letterSpacing: 2.2, color: Colors.black),
-                  ),
-                ),
-                )],
-          ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Create a Recipe", style: TextStyle(fontSize: 20.0, fontFamily: 'Rubik'),),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          centerTitle: true,
+        ),
+        body: Container(
+            padding: EdgeInsets.all(10),
+            child: Column(
+                children: [
+                  SizedBox(height: 30.0),
+                  Container(
+                      child: TextField(
+                        controller: recipeNameController,
+                        decoration: InputDecoration(
+                            labelText: 'Recipe name',
+                            border: OutlineInputBorder()
+                        ),
+                      )),
+                  SizedBox(height: 10.0),
+                  Container(
+                      child: TextField(
+                        maxLines: 5,
+                        controller: instructionController,
+                        decoration: InputDecoration(
+                            labelText: 'Enter recipe instructions',
+                            border: OutlineInputBorder()
+                        ),
+                      )),
+                  SizedBox(height: 10.0),
+                  Container(
+                    width: double.infinity,
+                    height: 50.0,
+                    child: ElevatedButton(
+                        onPressed: (){
+                          addRecipeToFirebase();
+                        },
+                        child: Text('Add Item', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
+                  )]
+            )
         )
     );
   }

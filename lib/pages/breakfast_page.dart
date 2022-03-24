@@ -1,3 +1,4 @@
+import 'package:first_prototype/pages/create_new_recipe_page.dart';
 import 'package:flutter/material.dart';
 import '../builders/recipe_card_builder.dart';
 
@@ -9,22 +10,23 @@ class BreakfastPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView (
-      children: <Widget> [
-        Center(
-          child: Padding(
-              padding: const EdgeInsets.only(top:10),
-              child: Text('Breakfast', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik'),
-              ),
-          ),
-        ),
-        recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
-        recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
-        recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
-        recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
-      ],
+    return Scaffold(
+        appBar: AppBar(title: Text('Breakfast Recipes',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
+        backgroundColor: Colors.white,foregroundColor: Colors.black),
+        body: Container(
+          child: ListView (
+            children: <Widget> [
+            recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
+            recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
+            recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
+            recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
+      ]
     ),
-      );
+        ),
+    floatingActionButton: FloatingActionButton(backgroundColor: Colors.white, foregroundColor: Colors.black.withOpacity(0.7),
+    child: Icon(Icons.add),onPressed: () {
+    Navigator.push(
+    context, MaterialPageRoute(builder: (context) => AddRecipe()));}
+    ));
 }
 }
