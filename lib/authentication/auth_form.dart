@@ -43,7 +43,6 @@ class _AuthFormState extends State<AuthForm> {
             email: email, password: password);
         String? uID = authResult.user?.uid;
         await FirebaseFirestore.instance
-        // Firebase Firestore (Data)
             .collection('users') // Collection
             .doc(uID) // Document
             .set(({ // Set of keys in field, stores 'username' as the user's username and 'email' as the user's email
