@@ -16,6 +16,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   bool valNotify1 = false;
 
+
   onChangeFunction1(bool newValue1) {
     setState(() {
       valNotify1 = newValue1;
@@ -34,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 height: 40),
             Row(
                 children: [
-                  Icon(Icons.person),
+                  Icon(Icons.account_circle_rounded),
                   SizedBox(width: 10),
                   Text('Account', style: TextStyle(fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -127,7 +128,7 @@ class _SettingsPageState extends State<SettingsPage> {
             actions: [
               TextButton(onPressed: () {
                 Navigator.of(context).pop();
-              },
+                },
                   child: Text('Close'))
             ],
           );
@@ -142,7 +143,7 @@ class _SettingsPageState extends State<SettingsPage> {
               fontSize: 20,
               fontWeight: FontWeight.bold,
               fontFamily: 'Rubik',)),
-            Icon(Icons.arrow_forward_ios, color: Colors.grey),
+            Icon(Icons.arrow_forward, color: Colors.grey[600]),
           ],
         ),),
     );

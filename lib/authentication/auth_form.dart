@@ -3,59 +3,60 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 
-class AuthScreen extends StatefulWidget {
-  const AuthScreen({Key? key}) : super(key: key);
+class AuthForm extends StatefulWidget {
+  const AuthForm({Key? key}) : super(key: key);
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
+  State<AuthForm> createState() => _AuthFormState();
 }
 
-class _AuthScreenState extends State<AuthScreen> {
+class _AuthFormState extends State<AuthForm> {
   // ------------------------
   final _formkey = GlobalKey<FormState>();
-  var _email = '';
-  var _password = '';
-  var _username = '';
+  var userEmail = '';
+  var userPassword = '';
+  var userUsername = '';
   bool isLoginPage = false;
   // ------------------------
 
+  //
   startAuthentication() {
-    final validity = _formkey.currentState!.validate();
+    final _validation = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
 
-    if (validity) {
+    if (_validation) {
       _formkey.currentState!.save();
-      submitForm(_email, _password, _username);
+      submitForm(userEmail, userPassword, userUsername);
     }
   }
 
   submitForm(String email, String password, String username) async {
-    final auth = FirebaseAuth.instance;
+    final authenticate = FirebaseAuth.instance;
     UserCredential authResult;
     try {
-      if (isLoginPage) {
+      if (isLoginPage) { // If loginpage is called:
         authResult =
-        await auth.signInWithEmailAndPassword(email: email, password: password);
+        await authenticate.signInWithEmailAndPassword(email: email, password: password);
       }
       else {
-        authResult = await auth.createUserWithEmailAndPassword(
+        authResult = await authenticate.createUserWithEmailAndPassword(
             email: email, password: password);
         String? uID = authResult.user?.uid;
         await FirebaseFirestore.instance
-            .collection('users')
-            .doc(uID)
-            .set(({
+        // Firebase Firestore (Data)
+            .collection('users') // Collection
+            .doc(uID) // Document
+            .set(({ // Set of keys in field, stores 'username' as the user's username and 'email' as the user's email
               'username': username,
               'email': email,
         }));
       }
     }
       on PlatformException catch (err) {
-        String? message = 'An error occured';
         if (err.message != null) {
-          message = err.message;
         }
-      } catch (err) {
+      }
+      catch (err) {
         print(err);
       }
     }
@@ -66,10 +67,11 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
         child: ListView(
           children: [
+            SizedBox(height: 30.0),
+            Text('Welcome!', style: TextStyle(color: Colors.black,
+                fontFamily: 'Rubik',decoration: TextDecoration.none), textAlign: TextAlign.center),
             Container(
                 padding: EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Form(
@@ -77,19 +79,19 @@ class _AuthScreenState extends State<AuthScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if (!isLoginPage)
+                      if (!isLoginPage) // Default to register screen
                         Card (
                           child:TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           key: ValueKey('username'),
                           validator: (value) {
-                            if (value!.isEmpty) {
+                            if (value!.isEmpty) { // If user tries to enter nothing, it will return 'Invalid username'
                               return 'Invalid username';
                             }
                             return null;
                           },
                           onSaved: (value) {
-                            _username = value!;
+                            userUsername = value!;
                           },
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -103,13 +105,13 @@ class _AuthScreenState extends State<AuthScreen> {
                           keyboardType: TextInputType.emailAddress,
                           key: ValueKey('email'),
                           validator: (value) {
-                            if (value!.isEmpty || !value.contains('@')) {
+                            if (value!.isEmpty || !value.contains('@')) { // If value is empty or does not contain an @ symbol, return 'Invalid email'
                               return 'Invalid email';
                             }
-                            return null;
+                            return null; // otherwise, return nothing
                           },
                           onSaved: (value) {
-                            _email = value!;
+                            userEmail = value!;
                           },
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -125,13 +127,13 @@ class _AuthScreenState extends State<AuthScreen> {
                           keyboardType: TextInputType.emailAddress,
                           key: ValueKey('password'),
                           validator: (value) {
-                            if (value!.isEmpty) {
+                            if (value!.isEmpty) { // If nothing is in password box, return 'Invalid password'
                               return 'Invalid password';
                             }
                             return null;
                           },
                           onSaved: (value) {
-                            _password = value!;
+                            userPassword = value!;
                           },
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -140,26 +142,25 @@ class _AuthScreenState extends State<AuthScreen> {
                               labelText: "Enter Password")
                         ),
                       ),
-
                       SizedBox(height: 10),
 
                       ElevatedButton(
                               child: isLoginPage
                                   ? Text('Login') : Text('SignUp'),
                               onPressed: () {
-                                startAuthentication();
+                                startAuthentication(); // Both 'Login' and 'SignUp' buttons are authenticated using startAuthentication
                               }),
                       SizedBox(height: 10),
                       Card(
                         child: TextButton(
                             onPressed: () {
                               setState(() {
-                                isLoginPage = !isLoginPage;
+                                isLoginPage = !isLoginPage; // If one or the other of 'not a member' and 'already a member' is pressed, switch the pages
                               });
                             },
                             child: isLoginPage
-                                ? Text('Not a member?')
-                                : Text('Already a Member?')
+                                ? Text('Not a member?') // Pressing not a member takes you to register page
+                                : Text('Already a Member?') // Pressing already a member takes you to login page
                         ),
                       )
                     ],

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class AuthScreen extends StatefulWidget {
-  const AuthScreen({Key? key}) : super(key: key);
+class AuthScreenPage extends StatefulWidget {
+  const AuthScreenPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
+  State<AuthScreenPage> createState() => _AuthScreenPageState();
 }
 
-class _AuthScreenState extends State<AuthScreen> {
+class _AuthScreenPageState extends State<AuthScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: AuthScreen(
+      child: AuthScreenPage(
       )
     );
   }

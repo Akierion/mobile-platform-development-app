@@ -17,14 +17,12 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(''),
-            Text(''),
             Text('Welcome to Recipes Necessities', style: TextStyle(fontFamily: 'Rubik', fontSize: 25.0),textAlign: TextAlign.center,),
-            Text(''),
+            SizedBox(height: 10.0),
             const Image(image: AssetImage('assets/logo.png'), height: 350,),
-            Text(''),
+            SizedBox(height: 10.0),
             Text('The one stop that helps students shop.', style: TextStyle(fontFamily: 'Rubik', fontSize: 25.0),textAlign: TextAlign.center,),
-            Text(''),
+            SizedBox(height: 30.0),
             Text('Tip of the day: Buying frozen food is cheaper, and longerlasting!', style: TextStyle(fontFamily: 'Rubik', fontSize: 15.0), textAlign: TextAlign.center),
           ]
         ),

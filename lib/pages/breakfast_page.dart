@@ -23,7 +23,7 @@ class BreakfastPage extends StatelessWidget {
         recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
         recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
         recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
-    ],
+      ],
     ),
       );
 }
