@@ -5,7 +5,7 @@ class RecipeCardBuilder extends StatefulWidget {
 
   @override
   State<RecipeCardBuilder> createState() => _RecipeCardBuilderState();
-  Card recipeCardBuilder (String recipeName, String calories) {
+  Card recipeCardBuilder (String recipeName, String calories, String allergies, ) {
     return Card (
       child: Column (
         crossAxisAlignment: CrossAxisAlignment.center,
