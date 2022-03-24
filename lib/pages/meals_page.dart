@@ -4,9 +4,10 @@ import '../builders/recipe_card_builder.dart';
 
 class MealsPage extends StatelessWidget {
   MealsPage({Key? key}) : super(key: key);
-  final List<String> recipes = <String> ['Beans on Toast', 'Cheese on Toast', 'Macaroni and Cheese', 'Rainbow Rice'];
-  final List<String> calories = <String> ['400', '300', '600', '800'];
+  final List<String> recipes = <String> ['Beans on Toast', 'Cheese on Toast', 'Macaroni and Cheese', 'Rainbow Rice', 'Chow Mein', 'Curry'];
+  final List<String> calories = <String> ['400', '326', '860', '450', '399', '500'];
   final recipeCardBuilder = RecipeCardBuilder();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,3 +29,4 @@ class MealsPage extends StatelessWidget {
     );
   }
 }
+
