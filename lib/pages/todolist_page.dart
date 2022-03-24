@@ -13,7 +13,7 @@ class ToDoListPage extends StatefulWidget {
 
 class _ToDoListPageState extends State<ToDoListPage> {
   List itemList = ['ITEM 1', 'ITEM 2', 'ITEM 3', 'ITEM 4'];
-  List descriptionList = ['ITEM 1 DESCRIPTION', 'ITEM 2 DESCRIPTION', 'ITEM 3 DESCRIPTION', 'ITEM 4 DESCRIPTION'];
+  List descriptionList = ['ITEM 1 TIME (SWIPE TO REMOVE OR EDIT)', 'ITEM 2 TIME (SWIPE TO REMOVE OR EDIT)', 'ITEM 3 TIME (SWIPE TO REMOVE OR EDIT)', 'ITEM 4 TIME (SWIPE TO REMOVE OR EDIT)'];
 
   ElevatedButton elevatedButtonBuilder(String item, String description){
     return ElevatedButton(onPressed: () {  },

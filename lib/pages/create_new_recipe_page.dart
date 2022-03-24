@@ -13,8 +13,10 @@ class AddRecipe extends StatefulWidget {
 }
 
 class _AddRecipeState extends State<AddRecipe> {
+  // Can easily gather more data from user and send it to firebase (e.g. nutritional info & allergens of food etc)
   TextEditingController recipeNameController = TextEditingController();
   TextEditingController instructionController = TextEditingController();
+  TextEditingController caloriesController = TextEditingController();
 
   addRecipeToFirebase() async {
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -23,11 +25,13 @@ class _AddRecipeState extends State<AddRecipe> {
     var time = DateTime.now();
 
     await FirebaseFirestore.instance
+    // In Firebase it follows the path of recipes --> user ID --> my recipes --> time -->
+    // then the recipe details e.g. name, instructions, and time of creation
         .collection('recipes')
         .doc(uid)
         .collection('my recipes')
         .doc(time.toString())
-        .set({'title': recipeNameController.text, 'description': instructionController.text, 'time': time
+        .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController, 'time': time
     });
     Fluttertoast.showToast(msg: 'Recipe added');
   }
@@ -61,6 +65,15 @@ class _AddRecipeState extends State<AddRecipe> {
                         controller: instructionController,
                         decoration: InputDecoration(
                             labelText: 'Enter recipe instructions',
+                            border: OutlineInputBorder()
+                        ),
+                      )),
+                  SizedBox(height: 10.0),
+                  Container(
+                      child: TextField(
+                        controller: recipeNameController,
+                        decoration: InputDecoration(
+                            labelText: 'Enter calories per serving',
                             border: OutlineInputBorder()
                         ),
                       )),

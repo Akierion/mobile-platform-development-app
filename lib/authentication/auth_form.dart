@@ -10,6 +10,8 @@ class AuthForm extends StatefulWidget {
   State<AuthForm> createState() => _AuthFormState();
 }
 
+/* Source used to help setup this page --> https://github.com/akmadan/todo_firebase_flutter */
+
 class _AuthFormState extends State<AuthForm> {
   // ------------------------
   final _formkey = GlobalKey<FormState>();
@@ -68,11 +70,13 @@ class _AuthFormState extends State<AuthForm> {
         color: Colors.white,
         child: ListView(
           children: [
-            SizedBox(height: 30.0),
+            SizedBox(height: 70.0),
             Text('Welcome!', style: TextStyle(color: Colors.black,
                 fontFamily: 'Rubik',decoration: TextDecoration.none), textAlign: TextAlign.center),
+            SizedBox(height: 50.0,),
+            //const Image(image: AssetImage('assets/logo.png'), height: 200),
             Container(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
                 child: Form(
                   key: _formkey,
                   child: Column(

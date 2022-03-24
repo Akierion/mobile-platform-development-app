@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-        appBar: AppBar(title: Text('Homepage',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
+      appBar: AppBar(title: Text('Homepage',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
       backgroundColor: Colors.white, foregroundColor: Colors.black),
       body: Container(
       height: 600,

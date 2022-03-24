@@ -48,7 +48,7 @@ class _AddTaskState extends State<AddTask> {
               child: TextField(
                 controller: titleController,
                 decoration: InputDecoration(
-                  labelText: 'Enter Item Name',
+                  labelText: 'Shopping Item Name',
                   border: OutlineInputBorder()
                 ),
               )),
@@ -57,7 +57,7 @@ class _AddTaskState extends State<AddTask> {
                 child: TextField(
                   controller: descriptionController,
                   decoration: InputDecoration(
-                      labelText: 'Enter Description',
+                      labelText: 'Description (optional)',
                       border: OutlineInputBorder()
                   ),
                 )),

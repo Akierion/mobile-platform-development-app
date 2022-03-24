@@ -5,8 +5,13 @@ import 'create_new_recipe_page.dart';
 
 class MealsPage extends StatelessWidget {
   MealsPage({Key? key}) : super(key: key);
+  // ------------------------------------------------------------
   final List<String> recipes = <String> ['Beans on Toast', 'Cheese on Toast', 'Macaroni and Cheese', 'Rainbow Rice', 'Chow Mein', 'Curry'];
   final List<String> calories = <String> ['400', '326', '860', '450', '399', '500'];
+  final List<String> recipeInstructions = <String> ['Recipe Instructions'];
+  // Currently only the recipe name and instructions are taken from the user and put in the firebase database,
+  // this can be changed to add a lot more info, e.g. nutritional information, allergens, etc
+  // ------------------------------------------------------------
   final recipeCardBuilder = RecipeCardBuilder();
 
   @override
@@ -17,10 +22,10 @@ class MealsPage extends StatelessWidget {
         body: Container(
           child: ListView (
               children: <Widget> [
-                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
-                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
-                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
-                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
+                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0],  recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1],  recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2], recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3], recipeInstructions[0]),
               ]
           ),
         ),

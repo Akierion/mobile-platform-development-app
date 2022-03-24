@@ -5,7 +5,7 @@ class RecipeCardBuilder extends StatefulWidget {
 
   @override
   State<RecipeCardBuilder> createState() => _RecipeCardBuilderState();
-  Card recipeCardBuilder (String recipeName, String calories, String allergieInfo, String nutritionalInfo, String recipeInstructions) {
+  Card recipeCardBuilder (String recipeName, String calories,  String recipeInstructions) {
     return Card (
       child: Column (
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -19,22 +19,24 @@ class RecipeCardBuilder extends StatefulWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              TextButton(
-                  child: const Text('Allergens'),
-                  onPressed: (){}),
-              TextButton(
-                child: const Text('Check Nutrtional Content'),
-                onPressed: (){},
-              ),
-              TextButton(
-                child: const Text('See Recipe'),
-                onPressed: (){},
-              ),
-            ],
-          )
-        ],
-      ),
-    );
+              // ------------------------------------------------------------
+              // Can add additional buttons to show allergy & nutritional info etc..
+              // ElevatedButton(
+              //     child: const Text('Allergens'),
+              //     onPressed: (){}),
+              // ElevatedButton(
+              //   child: const Text('Check Nutrtional Content'),
+              //   onPressed: (){},
+              // ),
+              // ------------------------------------------------------------
+              ElevatedButton(
+                onPressed: () {  },
+                child: const Text('See Recipe Instructions')
+              )],
+                ),
+              ],
+          ),
+      );
   }
 }
 

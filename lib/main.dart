@@ -7,32 +7,30 @@ import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(); // Connects app to Firebase
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'RECIPES NECESSITIES', // Title of App
+      title: 'Recipes Necessities', // Title of App
       debugShowCheckedModeBanner: false,
       home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, usersnapshot)
       {
         if (usersnapshot.hasData) {
+          // if user is logged in return content
           return MainPage();
         }
         else{
+          // otherwise, return login / register page
           return AuthForm();
         }
       }),
-
-
       theme: lightTheme,
-      //new ThemeData(scaffoldBackgroundColor: Colors.grey[300]),
     );
   }
 }

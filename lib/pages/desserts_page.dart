@@ -4,8 +4,11 @@ import 'create_new_recipe_page.dart';
 
 class DessertsPage extends StatelessWidget {
   DessertsPage({Key? key}) : super(key: key);
+  // ------------------------------------------------------------
   final List<String> recipes = <String> ['Bread & Butter Pudding', 'Cupcakes', 'Rice Krispie Cakes', 'Pancakes with Maple Syrup', 'Jumbo Chocolate-Chip Cookies', 'Mug Cake', 'Bananna Bread', '"Special" Brownies', 'Simple Apple Crumble'];
   final List<String> calories = <String> ['566', '350', '278', '350', '299', '1117', '218', '196', '608'];
+  final List<String> recipeInstructions = <String> ['Recipe Instructions'];
+  // ------------------------------------------------------------
   final recipeCardBuilder = RecipeCardBuilder();
 
   @override
@@ -16,10 +19,10 @@ class DessertsPage extends StatelessWidget {
         body: Container(
           child: ListView (
               children: <Widget> [
-                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0]),
-                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1]),
-                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2]),
-                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3]),
+                recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0], recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1], recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2], recipeInstructions[0]),
+                recipeCardBuilder.recipeCardBuilder(recipes[3], calories[3], recipeInstructions[0]),
               ]
           ),
         ),
