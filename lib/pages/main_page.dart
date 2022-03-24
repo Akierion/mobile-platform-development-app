@@ -31,6 +31,8 @@ class _MainPageState extends State<MainPage> {
   Icon addIcon = const Icon(Icons.add_circle_outline); // for floating button
   int currentIndex = 0;
   List pages = [
+    // by storing app pages in a list, it means that because we use index to count the pages, we can use index again to
+    // call the page (if they are listed in the correct order of course).
     HomePage(),
     BreakfastPage(),
     MealsPage(),

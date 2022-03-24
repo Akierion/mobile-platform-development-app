@@ -10,9 +10,9 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar (title: Text('Authentication'),),
-    body: AuthForm();
+    return Container(
+      child: AuthScreen(
+      )
     );
   }
 }

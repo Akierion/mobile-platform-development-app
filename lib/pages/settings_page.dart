@@ -1,4 +1,4 @@
-import 'package:first_prototype/pages/themes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +71,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     borderRadius: BorderRadius.circular(20),
                   )
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  _signOut(); // calls signout function
+                },
                 child: Text('SIGN OUT', style: TextStyle(
                   fontSize: 16, letterSpacing: 2.2, color: Colors.black),
                 ),
@@ -100,7 +102,6 @@ class _SettingsPageState extends State<SettingsPage> {
               trackColor: Colors.grey,
               value: value,
               onChanged: (bool newValue) {
-
                 //ThemeData.from(colorScheme: ColorScheme.dark());
                 OnChangeMethod(newValue);
                 },
@@ -146,4 +147,10 @@ class _SettingsPageState extends State<SettingsPage> {
         ),),
     );
   }
+}
+
+
+// Tells firebase to sign user out
+void _signOut() async {
+  await FirebaseAuth.instance.signOut();
 }
