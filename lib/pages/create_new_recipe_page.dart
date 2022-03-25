@@ -84,7 +84,7 @@ class _AddRecipeState extends State<AddRecipe> {
                         onPressed: (){
                           addRecipeToFirebase();
                         },
-                        child: Text('Add Item', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
+                        child: Text('Add Recipe', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
                   )]
             )
         )
