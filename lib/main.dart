@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recipes Necessities', // Title of App
       debugShowCheckedModeBanner: false,
-      home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(),
-      builder: (context, usersnapshot)
+      home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), // A stream is needed between the app and Firebase to update the snapshot (the data stored within Firebase)
+      builder: (context, userSnapshot)
       {
-        if (usersnapshot.hasData) {
-          // if user is logged in return content
+        if (userSnapshot.hasData) {
+          // if user is logged, in return content
           return MainPage();
         }
         else{
-          // otherwise, return login / register page
+          // otherwise, return the authentication form i.e. when the user signs out using the button in settings
           return AuthForm();
         }
       }),

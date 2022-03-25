@@ -31,7 +31,7 @@ class _AddRecipeState extends State<AddRecipe> {
         .collection('my recipes')
         .doc(time.toString())
         .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController.text, 'time': time}); // Set the 'recipe', 'recipe instructions', 'calories' & 'time' fields to their respective TextField controller
-    Fluttertoast.showToast(msg: 'Recipe added');
+    Fluttertoast.showToast(msg: 'Recipe added'); // Adds a 'toast' to pop up when a new recipe has been added to recipes collection in Firebase (Cloud Firestore)
   }
 
   @override
@@ -81,7 +81,7 @@ class _AddRecipeState extends State<AddRecipe> {
                     height: 50.0,
                     child: ElevatedButton(
                         onPressed: (){
-                          addRecipeToFirebase(); // Calls addRecipeToFirebase which gets the user's ID, the info regarding recipe e.g. title, instructions and calories and adds them to firebase
+                          addRecipeToFirebase(); // When the Add recipe button is called, it calls the addRecipeToFirebase function which gets the user's ID, the info regarding recipe e.g. title, instructions and calories and adds them to Firebase (Firestore - Realtime database)
                         },
                         child: Text('Add Recipe', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
                   )]

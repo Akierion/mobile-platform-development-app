@@ -32,7 +32,7 @@ class RecipeCardBuilder extends StatefulWidget {
               // ),
               // ------------------------------------------------------------
               ElevatedButton(
-                onPressed: () {  },
+                onPressed: () { /* Once pressed, a new page should come up showing the recipe instructions (if implemented) */ },
                 child: const Text('See Recipe Instructions')
               )],
                 ),

@@ -16,7 +16,7 @@ class _AddItemState extends State<AddItem> {
   TextEditingController descriptionController = TextEditingController();
 
   addTaskToFirebase() async {
-    // ----- Firebase, makes sure that the user is authenticated
+    // ----- Calls Firebase and waits to make sure that the user is authenticated
     FirebaseAuth auth = FirebaseAuth.instance;
     final User user = await auth.currentUser!;
     final uid = user.uid;
@@ -27,9 +27,9 @@ class _AddItemState extends State<AddItem> {
         .doc(uid)
         .collection('shopping list')
         .doc(time.toString())
-        .set({'title': titleController.text, 'description': descriptionController.text, 'time': time
+        .set({'title': titleController.text, 'description': descriptionController.text, 'time': time // Sets the data to the time document in Firebase (Cloud Firestore) shopping lists collection
         });
-    Fluttertoast.showToast(msg: 'Shopping item added'); // Added a 'toast' to pop up when a new item has been added to shopping lists (Firebase)
+    Fluttertoast.showToast(msg: 'Shopping item added'); // Adds a 'toast' to pop up when a new item has been added to shopping lists (Firebase)
   }
 
   @override
@@ -69,7 +69,7 @@ class _AddItemState extends State<AddItem> {
               height: 50.0,
               child: ElevatedButton(
                   onPressed: (){
-                    addTaskToFirebase(); // When button is pressed, add item to Cloud Firestore
+                    addTaskToFirebase(); // When button is pressed, add item to Firebase (Firestore - Realtime database)
                   },
                   child: Text('Add Item', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
             )]

@@ -1,11 +1,8 @@
-//import 'dart:ffi';
-
 import 'package:first_prototype/pages/breakfast_page.dart';
 import 'package:first_prototype/pages/meals_page.dart';
 import 'package:first_prototype/pages/settings_page.dart';
 import 'package:first_prototype/pages/todolist_page.dart';
 import 'package:flutter/material.dart';
-
 import 'desserts_page.dart';
 import 'home_page.dart';
 
@@ -29,9 +26,9 @@ class _MainPageState extends State<MainPage> {
   Icon dessertIcon = const Icon(IconData(0xef0f, fontFamily: 'MaterialIcons'));
   Icon checklistIcon = const Icon(IconData(0xef4b, fontFamily: 'MaterialIcons'));
   Icon addIcon = const Icon(Icons.add_circle_outline); // for floating button
-  int currentIndex = 0;
-  // ----------------------------------------
 
+  // ----------------------------------------
+  int currentIndex = 0;
   List pages = [
     // By storing app pages in a list, it means that because we use index to count the pages, we can use index again to
     // call the page (if they are listed in the correct order of course).
@@ -42,6 +39,7 @@ class _MainPageState extends State<MainPage> {
     ToDoListPage(),
     SettingsPage(),
   ];
+  // ----------------------------------------
 
   void onTap(int index){
     setState(() {
@@ -52,16 +50,16 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: pages[currentIndex], // Use the index (which is changed when a bottom navigation bar item is tapped (onTap)) for each page
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTap,
+        onTap: onTap, // Calls the function onTap (which changes the currentIndex to the index of the page you clicked, in essence, calling that page in the list with that index)
         currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.fixed, // Fixes the color scheme provided below to the bottom navigation bar (if dark mode was implemented, this would be taken out to allow it to be dynamic)
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.black54,
+        selectedItemColor: Colors.black54, // When an item is selected, change it's color (to help the user identify that is the tab they are on)
         unselectedItemColor: Colors.grey.withOpacity(0.5),
-        showUnselectedLabels: false,
-        showSelectedLabels: true,
+        showUnselectedLabels: false, // If unselected, don't show labels e.g. Home, breakfast, meals, my list and settings
+        showSelectedLabels: true, // If selected, show labels
         elevation: 0,
         items: [
           BottomNavigationBarItem(
@@ -69,7 +67,7 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: breakfastIcon, label: 'Breakfast',),
           BottomNavigationBarItem(
-            icon: lunchIcon, label: 'Lunch',),
+            icon: lunchIcon, label: 'Meals',),
           BottomNavigationBarItem(
               icon: dessertIcon, label: 'Dessert'),
           BottomNavigationBarItem(

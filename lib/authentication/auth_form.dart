@@ -14,7 +14,7 @@ class AuthForm extends StatefulWidget {
 
 class _AuthFormState extends State<AuthForm> {
   // ------------------------
-  final _formkey = GlobalKey<FormState>();
+  final _formkey = GlobalKey<FormState>(); // Unique across entire app
   var userEmail = '';
   var userPassword = '';
   var userUsername = '';
@@ -23,6 +23,7 @@ class _AuthFormState extends State<AuthForm> {
 
   //
   startAuthentication() {
+    // Calls submitForm and authenticates the user
     final _validation = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
 
@@ -53,7 +54,7 @@ class _AuthFormState extends State<AuthForm> {
         }));
       }
     }
-      on PlatformException catch (err) {
+      on PlatformException catch (err) { // Error handling, required for try and except to work
         if (err.message != null) {
         }
       }
@@ -94,7 +95,7 @@ class _AuthFormState extends State<AuthForm> {
                             return null;
                           },
                           onSaved: (value) {
-                            userUsername = value!;
+                            userUsername = value!; // user data is saved to value which can be used to save it to userUsername, userEmail & userPassword etc
                           },
                           decoration: InputDecoration(
                               border: OutlineInputBorder(

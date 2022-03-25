@@ -9,6 +9,7 @@ class DessertsPage extends StatelessWidget {
   final List<String> calories = <String> ['566', '350', '278', '350', '299', '1117', '218', '196', '608'];
   final List<String> recipeInstructions = <String> ['Recipe Instructions'];
   // ------------------------------------------------------------
+  // Create an object of the RecipeCardBuilder() class so the recipeCardBuilder function can be called
   final recipeCardBuilder = RecipeCardBuilder();
 
   @override
@@ -19,6 +20,7 @@ class DessertsPage extends StatelessWidget {
         body: Container(
           child: ListView (
               children: <Widget> [
+                // Build a recipe 'Card' as per the recipe_card_builder.dart class, for each of the recipes in the recipes list
                 recipeCardBuilder.recipeCardBuilder(recipes[0], calories[0], recipeInstructions[0]),
                 recipeCardBuilder.recipeCardBuilder(recipes[1], calories[1], recipeInstructions[0]),
                 recipeCardBuilder.recipeCardBuilder(recipes[2], calories[2], recipeInstructions[0]),
@@ -26,6 +28,7 @@ class DessertsPage extends StatelessWidget {
               ]
           ),
         ),
+        // This button is used to add recipes to Firebase, if the icon is pressed, push a new page (AddRecipe)
         floatingActionButton: FloatingActionButton(backgroundColor: Colors.white, foregroundColor: Colors.black.withOpacity(0.7),
             child: Icon(Icons.add),onPressed: () {
               Navigator.push(
