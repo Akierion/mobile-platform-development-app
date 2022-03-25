@@ -2,9 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../main.dart';
-
-// youtube.com/watch?v=FnXg0NK6hb8 -- For Help on Settings
+// https://www.youtube.com/watch?v=FnXg0NK6hb8 - Used this to help with settings page setup
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -43,7 +41,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     fontFamily: 'Rubik'),)
               ]
           ),
-          Divider(height: 20.0, thickness: 1,),
+          Divider(height: 20.0, thickness: 1.0,),
           SizedBox(height: 10.0),
           // -------- Various options available on settings page
           buildAccountOption(context, 'Change Password', 'Change Password Here'),
