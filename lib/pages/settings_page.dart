@@ -45,6 +45,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Divider(height: 20.0, thickness: 1,),
           SizedBox(height: 10.0),
+          // -------- Various options available on settings page
           buildAccountOption(context, 'Change Password', 'Change Password Here'),
           buildAccountOption(context, 'Language', 'Languages Here'),
           buildAccountOption(context, 'Privacy and Security', 'Privacy and Security Here'),
@@ -52,7 +53,7 @@ class _SettingsPageState extends State<SettingsPage> {
           SizedBox(height: 40.0),
           Row(
             children: [ // Preference Settings
-              Icon(Icons.volume_up_outlined),
+              Icon(Icons.volume_up_outlined), //
               SizedBox(width: 10.0),
               Text('Preferences', style: TextStyle(
                 fontSize: 22.0,
@@ -61,6 +62,7 @@ class _SettingsPageState extends State<SettingsPage> {
               )),
             ],
           ),
+          // ---------- Dark theme button
           Divider(height: 20.0, thickness: 1.0),
           SizedBox(height: 10.0),
           buildNotificationOption('Dark Theme', valNotify1, onChangeFunction1),
@@ -87,6 +89,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  // ------------- This is for building the setting options (each in their own row)
   Padding buildNotificationOption(String title, bool value, Function OnChangeMethod) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
@@ -98,6 +101,7 @@ class _SettingsPageState extends State<SettingsPage> {
             fontWeight: FontWeight.bold,
             fontFamily: 'Rubik',
           )),
+          // Dark mode button functionality
           Transform.scale(
             scale: 0.7,
             child: CupertinoSwitch(
@@ -119,7 +123,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return GestureDetector(
       onTap: () {
         showDialog(context: context, builder: (BuildContext context) {
-          return AlertDialog( // Alert dialog pops up a small box when you click the setting
+          return AlertDialog( // Alert dialog pops up a small box when you click each setting option
             title: Text(title),
             content: Column(
               mainAxisSize: MainAxisSize.min,

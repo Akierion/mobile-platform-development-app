@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'add_item_page.dart';
 
 
@@ -30,11 +28,11 @@ class _ToDoListPageState extends State<ToDoListPage> {
     return Scaffold(
         appBar: AppBar(title: Text('My Shopping List',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true, backgroundColor: Colors.white, foregroundColor: Colors.black),
       body: Center (
-        //padding: EdgeInsets.all(5),
         child: Container (
           child: Column(
             children: [
               Container(
+                // Creates each item using the elevatedButtonBuilder
                   child: elevatedButtonBuilder(itemList[0], descriptionList[0])
                 ),
                 SizedBox(height: 2.0),
@@ -55,7 +53,8 @@ class _ToDoListPageState extends State<ToDoListPage> {
     ),
       floatingActionButton: FloatingActionButton(backgroundColor: Colors.white, foregroundColor: Colors.black.withOpacity(0.7),
           child: Icon(Icons.add),onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => AddTask()));
+        // ----- Changes to the page where new items of shopping list can be added
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AddItem()));
     }),
     );
   }

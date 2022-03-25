@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AddRecipe extends StatefulWidget {
@@ -19,6 +17,7 @@ class _AddRecipeState extends State<AddRecipe> {
   TextEditingController caloriesController = TextEditingController();
 
   addRecipeToFirebase() async {
+    // First waits for user to be authenticated, and then stores the recipe name, the instructions, the calories and the timestamp in Firebase (similar to add_item_page.dart)
     FirebaseAuth auth = FirebaseAuth.instance;
     final User user = await auth.currentUser!;
     final uid = user.uid;
@@ -26,12 +25,12 @@ class _AddRecipeState extends State<AddRecipe> {
 
     await FirebaseFirestore.instance
     // In Firebase it follows the path of recipes --> user ID --> my recipes --> time -->
-    // then the recipe details e.g. name, instructions, and time of creation
+    // then adds the recipe details e.g. name, instructions, calories & the time it was created (UTC)
         .collection('recipes')
         .doc(uid)
         .collection('my recipes')
         .doc(time.toString())
-        .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController.text, 'time': time});
+        .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController.text, 'time': time}); // Set the 'recipe', 'recipe instructions', 'calories' & 'time' fields to their respective TextField controller
     Fluttertoast.showToast(msg: 'Recipe added');
   }
 
@@ -51,7 +50,7 @@ class _AddRecipeState extends State<AddRecipe> {
                   SizedBox(height: 30.0),
                   Container(
                       child: TextField(
-                        controller: recipeNameController,
+                        controller: recipeNameController, // Stores user input from the recipeName 'TextField' into a controller so that it can be used to store data in Firebase as shown above (same for instructionController and caloriesController)
                         decoration: InputDecoration(
                             labelText: 'Recipe name',
                             border: OutlineInputBorder()
@@ -82,7 +81,7 @@ class _AddRecipeState extends State<AddRecipe> {
                     height: 50.0,
                     child: ElevatedButton(
                         onPressed: (){
-                          addRecipeToFirebase();
+                          addRecipeToFirebase(); // Calls addRecipeToFirebase which gets the user's ID, the info regarding recipe e.g. title, instructions and calories and adds them to firebase
                         },
                         child: Text('Add Recipe', style: TextStyle(fontFamily: 'Rubik', fontSize: 17.0,))),
                   )]

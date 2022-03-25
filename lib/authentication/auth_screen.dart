@@ -11,8 +11,7 @@ class _AuthScreenPageState extends State<AuthScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: AuthScreenPage(
-      )
+      child: AuthScreenPage() // Calls auth_form.dart
     );
   }
 }
