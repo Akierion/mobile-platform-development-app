@@ -70,7 +70,7 @@ class _AuthFormState extends State<AuthForm> {
         color: Colors.white,
         child: ListView(
           children: [
-            SizedBox(height: 70.0),
+            SizedBox(height: 45.0),
             Text('Welcome!', style: TextStyle(color: Colors.black,
                 fontFamily: 'Rubik',decoration: TextDecoration.none), textAlign: TextAlign.center),
             SizedBox(height: 50.0,),
@@ -149,7 +149,7 @@ class _AuthFormState extends State<AuthForm> {
 
                       ElevatedButton(
                               child: isLoginPage
-                                  ? Text('Login') : Text('SignUp'),
+                                  ? Text('Login') : Text('Sign up'),
                               onPressed: () {
                                 startAuthentication(); // Both 'Login' and 'SignUp' buttons are authenticated using startAuthentication
                               }),

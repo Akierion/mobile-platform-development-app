@@ -29,55 +29,55 @@ class _SettingsPageState extends State<SettingsPage> {
         appBar: AppBar(title: Text('Settings',textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontFamily: 'Rubik')),centerTitle: true,
             backgroundColor: Colors.white, foregroundColor: Colors.black),
         body: Container(
-         padding: const EdgeInsets.all(10),
+         padding: const EdgeInsets.all(10.0),
           child: ListView(
             children: [
               Padding(padding: EdgeInsets.all(10.0)),
-              SizedBox(height: 40),
+              SizedBox(height: 40.0),
               Row(
               children: [
                 Icon(Icons.account_circle_rounded),
-                SizedBox(width: 10),
-                Text('Account', style: TextStyle(fontSize: 22,
+                SizedBox(width: 10.0),
+                Text('Account', style: TextStyle(fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Rubik'),)
               ]
           ),
-          Divider(height: 20, thickness: 1,),
-          SizedBox(height: 10),
+          Divider(height: 20.0, thickness: 1,),
+          SizedBox(height: 10.0),
           buildAccountOption(context, 'Change Password', 'Change Password Here'),
           buildAccountOption(context, 'Language', 'Languages Here'),
           buildAccountOption(context, 'Privacy and Security', 'Privacy and Security Here'),
           buildAccountOption(context, 'Terms and Conditions', 'Terms and Conditions Here'),
-          SizedBox(height: 40),
+          SizedBox(height: 40.0),
           Row(
             children: [ // Preference Settings
               Icon(Icons.volume_up_outlined),
-              SizedBox(width: 10),
+              SizedBox(width: 10.0),
               Text('Preferences', style: TextStyle(
-                fontSize: 22,
+                fontSize: 22.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Rubik',
               )),
             ],
           ),
-          Divider(height: 20, thickness: 1),
-          SizedBox(height: 10),
+          Divider(height: 20.0, thickness: 1.0),
+          SizedBox(height: 10.0),
           buildNotificationOption('Dark Theme', valNotify1, onChangeFunction1),
-          SizedBox(height: 50),
+          SizedBox(height: 50.0),
           Center ( // Sign out button
             child: OutlinedButton (
               style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.0),
                 )
               ),
               onPressed: (){
-                _signOut(); // calls signout function
+                _signOut(); // Calls sign out function
               },
               child: Text('SIGN OUT', style: TextStyle(
-                fontSize: 16, letterSpacing: 2.2, color: Colors.black),
+                fontSize: 20, letterSpacing: 2.2, color: Colors.black, fontFamily: 'Rubik'),
               ),
               ),
           ),
@@ -94,7 +94,7 @@ class _SettingsPageState extends State<SettingsPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title, style: TextStyle( // Builds the preferences menu for each preference defined in the buildNotificationOption function on lines 41-43
-            fontSize: 20,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'Rubik',
           )),
@@ -105,7 +105,7 @@ class _SettingsPageState extends State<SettingsPage> {
               trackColor: Colors.grey,
               value: value,
               onChanged: (bool newValue) {
-                //ThemeData.from(colorScheme: ColorScheme.dark());
+                // Darkmode feature would be implemented here
                 OnChangeMethod(newValue);
                 },
             ),
@@ -119,7 +119,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return GestureDetector(
       onTap: () {
         showDialog(context: context, builder: (BuildContext context) {
-          return AlertDialog(
+          return AlertDialog( // Alert dialog pops up a small box when you click the setting
             title: Text(title),
             content: Column(
               mainAxisSize: MainAxisSize.min,
@@ -153,7 +153,7 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 
-// Tells firebase to sign user out
+// Calls firebase to sign user out
 void _signOut() async {
   await FirebaseAuth.instance.signOut();
 }

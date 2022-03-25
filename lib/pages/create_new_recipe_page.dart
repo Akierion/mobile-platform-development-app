@@ -31,8 +31,7 @@ class _AddRecipeState extends State<AddRecipe> {
         .doc(uid)
         .collection('my recipes')
         .doc(time.toString())
-        .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController, 'time': time
-    });
+        .set({'recipe': recipeNameController.text, 'recipe instructions': instructionController.text, 'calories': caloriesController.text, 'time': time});
     Fluttertoast.showToast(msg: 'Recipe added');
   }
 
@@ -71,7 +70,7 @@ class _AddRecipeState extends State<AddRecipe> {
                   SizedBox(height: 10.0),
                   Container(
                       child: TextField(
-                        controller: recipeNameController,
+                        controller: caloriesController,
                         decoration: InputDecoration(
                             labelText: 'Enter calories per serving',
                             border: OutlineInputBorder()

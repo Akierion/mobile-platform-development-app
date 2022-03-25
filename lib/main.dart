@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           return AuthForm();
         }
       }),
-      theme: lightTheme,
+      theme: lightTheme, // Light theme and dark theme are both defined in themes.dart
     );
   }
 }
