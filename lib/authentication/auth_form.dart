@@ -18,12 +18,12 @@ class _AuthFormState extends State<AuthForm> {
   var userEmail = '';
   var userPassword = '';
   var userUsername = '';
-  bool isLoginPage = false;
+  bool isLoginPage = false; // Start user on signup page
   // ------------------------
 
   //
   startAuthentication() {
-    // Calls submitForm and authenticates the user
+    // Validates form data entered by user
     final _validation = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
 
@@ -37,7 +37,7 @@ class _AuthFormState extends State<AuthForm> {
     final authenticate = FirebaseAuth.instance;
     UserCredential authResult;
     try {
-      if (isLoginPage) { // If loginpage is called:
+      if (isLoginPage) { // If login page is called:
         authResult =
         await authenticate.signInWithEmailAndPassword(email: email, password: password);
       }
@@ -83,7 +83,7 @@ class _AuthFormState extends State<AuthForm> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if (!isLoginPage) // Default to register screen
+                      if (!isLoginPage) // Login Page
                         Card (
                           child:TextFormField(
                           keyboardType: TextInputType.emailAddress,
@@ -147,7 +147,7 @@ class _AuthFormState extends State<AuthForm> {
                         ),
                       ),
                       SizedBox(height: 10),
-
+                      // Login and Signup buttons
                       ElevatedButton(
                               child: isLoginPage
                                   ? Text('Login') : Text('Sign up'),
