@@ -1,6 +1,6 @@
 # first_prototype
 
-First prototype of Recipes Necessities
+This is an app that allows users to share recipes with other users. Currently, it is not fully implemented.
 
 ## Getting Started
 
